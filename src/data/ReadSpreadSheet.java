@@ -6,6 +6,8 @@
 package data;
 
 import java.io.IOException;
+import java.util.Collections;
+import java.util.List;
 
 /**
  *
@@ -13,8 +15,30 @@ import java.io.IOException;
  */
 public class ReadSpreadSheet {
     
+    private List<String> bopColumnValues;
+    private List<String> multiColumnValues;
+    private List<String> analyzerColumnValues;
+    
     public void readSpreadSheet(String filePath) throws IOException{
-        System.out.println("Valor pos zero " + GetColumnValues.getValuesBOPColumn(filePath).get(0));
-        System.out.println("Valor ult pos" + GetColumnValues.getValuesBOPColumn(filePath).get(GetColumnValues.getValuesBOPColumn(filePath).size()-1));
+        this.bopColumnValues = GetColumnValues.getValuesBOPColumn(filePath);
+        this.multiColumnValues = GetColumnValues.getValuesMultiColumn(filePath);
+        this.analyzerColumnValues = GetColumnValues.getValuesAnalyzerColumn(filePath);
+        
+        Collections.sort(this.bopColumnValues);
+        Collections.sort(this.multiColumnValues);
+        Collections.sort(this.analyzerColumnValues);
     }
+
+    public List<String> getBopColumnValues() {
+        return bopColumnValues;
+    }
+
+    public List<String> getMultiColumnValues() {
+        return multiColumnValues;
+    }
+
+    public List<String> getAnalyzerColumnValues() {
+        return analyzerColumnValues;
+    }
+    
 }

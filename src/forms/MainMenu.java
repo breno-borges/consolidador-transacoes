@@ -1,6 +1,8 @@
 package forms;
 
+import data.GetColumnValues;
 import data.ReadSpreadSheet;
+import data.Validation;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -22,12 +24,15 @@ public class MainMenu extends javax.swing.JFrame {
      */
     public MainMenu() {
         initComponents();
+        this.readSpreedSheet = new ReadSpreadSheet();
+        this.validation = new Validation(this.readSpreedSheet);
     }
 
-    private String path;
+    private static String path;
     private File file;
     private int fileChoosed;
-    private ReadSpreadSheet readSpreedSheet = new ReadSpreadSheet();
+    private ReadSpreadSheet readSpreedSheet;
+    private Validation validation;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -200,20 +205,27 @@ public class MainMenu extends javax.swing.JFrame {
         fileChooserInstance();
         try {
             readSpreedSheet.readSpreadSheet(path);
-            path = null;
-            file = null;
-            fileChoosed = 0;
+            if (GetColumnValues.finded[0] == 1 && GetColumnValues.finded[1] == 1 && GetColumnValues.finded[2] == 1) {
+                JOptionPane.showMessageDialog(null, "Arquivo lido com sucesso!");
+            } else {
+                JOptionPane.showMessageDialog(null, "Escolha um arquivo válido!");
+            }
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         } catch (NullPointerException npe) {
-            JOptionPane.showMessageDialog(null, "Nenhum arquivo selecionado");
+            JOptionPane.showMessageDialog(null, "Nenhum arquivo selecionado!");
         }
     }//GEN-LAST:event_buttonStep1ActionPerformed
 
     private void buttonStep2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonStep2ActionPerformed
 
         if (path != null) {
-            System.out.println("Segue o baile");
+            validation.validation();
+            validation.result();
+            path = null;
+            file = null;
+            fileChoosed = 0;
+            validation.clearColumns();
         } else {
             JOptionPane.showMessageDialog(null, "O passo 1 precisa ser executado primeiro");
         }
@@ -270,4 +282,8 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel labelVersion;
     private javax.swing.JPanel mainPanel;
     // End of variables declaration//GEN-END:variables
+
+    public static void setPath(String path) {
+        MainMenu.path = path;
+    }
 }

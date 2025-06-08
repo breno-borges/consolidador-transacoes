@@ -16,7 +16,7 @@ public class FindColumn {
 
         if (headerRow == null) {
             JOptionPane.showMessageDialog(null, "A planilha não possui uma linha de cabeçalho.");
-            return -1;
+            columnIndex = -1;
         }
 
         DataFormatter formatter = new DataFormatter(); // Instanciar DataFormatter
@@ -28,11 +28,6 @@ public class FindColumn {
                 columnIndex = cell.getColumnIndex();
                 break;
             }
-        }
-
-        if (columnIndex == -1) {
-            JOptionPane.showMessageDialog(null, "Coluna '" + column + "' não encontrada na planilha.");
-            return 0;
         }
 
         return columnIndex;
