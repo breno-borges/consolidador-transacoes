@@ -221,7 +221,9 @@ public class MainMenu extends javax.swing.JFrame {
 
         if (path != null) {
             validation.validation();
-            validation.result();
+            JOptionPane.showMessageDialog(null, "Conciliação concluída com sucesso!");
+            Result result = new Result(this, true, validation);
+            result.setVisible(true);
             path = null;
             file = null;
             fileChoosed = 0;

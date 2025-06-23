@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="title" type="java.lang.String" value="Resultado"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="separator" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="labelAddLength" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="labelInitialLength" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelInitial" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelEnd" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelBopInitialSize" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelBopInitialSizeValue" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelBopFinalSizeValue" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelMultiInitialSize" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelMultiInitialSizeValue" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelMultiFinalSizeValue" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="69" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelAnalyzerInitialSize" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelAnalyzerInitialSizeValue" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelAnalyzerFinalSizeValue" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelBopAddSize" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelBopAddSizeValue" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelMultiAddSize" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelMultiAddSizeValue" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelAnalyzerAddSizeValue" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelAnalyzerAddSize" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="buttonPreview" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="labelInitialLength" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelBopInitialSize" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelAnalyzerInitialSize" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelMultiInitialSize" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="labelBopInitialSizeValue" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelInitial" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                      <Component id="labelMultiInitialSizeValue" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelAnalyzerInitialSizeValue" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelEnd" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelBopFinalSizeValue" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelMultiFinalSizeValue" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelAnalyzerFinalSizeValue" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="separator" min="-2" pref="10" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="labelAddLength" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelAnalyzerAddSize" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelBopAddSize" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelMultiAddSize" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelBopAddSizeValue" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelMultiAddSizeValue" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelAnalyzerAddSizeValue" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+              <Component id="buttonPreview" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="labelInitialLength">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Total Registros"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelBopInitialSize">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="BOP:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelMultiInitialSize">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Multi:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelAnalyzerInitialSize">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Analyzer:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelInitial">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="In&#xed;cio:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelBopInitialSizeValue">
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelMultiInitialSizeValue">
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelAnalyzerInitialSizeValue">
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelEnd">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Fim:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelBopFinalSizeValue">
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelMultiFinalSizeValue">
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelAnalyzerFinalSizeValue">
+    </Component>
+    <Component class="javax.swing.JSeparator" name="separator">
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelAddLength">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Registros Adicionados"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelBopAddSize">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="BOP:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelMultiAddSize">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Multi:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelAnalyzerAddSize">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Analyzer:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelBopAddSizeValue">
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelMultiAddSizeValue">
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelAnalyzerAddSizeValue">
+    </Component>
+    <Component class="javax.swing.JButton" name="buttonPreview">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Visualizar Registros Adicionados"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>

@@ -43,30 +43,30 @@ public class Validation {
 
             // Mapeia as ocorrências de cada elemento para cada lista
             Map<String, Integer> bopCounts = new HashMap<>();
-            for (String s : readSpreadSheet.getBopColumnValues()) {
-                bopCounts.put(s, bopCounts.getOrDefault(s, 0) + 1);
+            for (String valueBop : readSpreadSheet.getBopColumnValues()) {
+                bopCounts.put(valueBop, bopCounts.getOrDefault(valueBop, 0) + 1);
             }
 
             Map<String, Integer> multiCounts = new HashMap<>();
-            for (String s : readSpreadSheet.getMultiColumnValues()) {
-                multiCounts.put(s, multiCounts.getOrDefault(s, 0) + 1);
+            for (String valueMulti : readSpreadSheet.getMultiColumnValues()) {
+                multiCounts.put(valueMulti, multiCounts.getOrDefault(valueMulti, 0) + 1);
             }
 
             Map<String, Integer> analyzerCounts = new HashMap<>();
-            for (String s : readSpreadSheet.getAnalyzerColumnValues()) {
-                analyzerCounts.put(s, analyzerCounts.getOrDefault(s, 0) + 1);
+            for (String valueAnalyzer : readSpreadSheet.getAnalyzerColumnValues()) {
+                analyzerCounts.put(valueAnalyzer, analyzerCounts.getOrDefault(valueAnalyzer, 0) + 1);
             }
 
             // Coleta todos os elementos únicos que existem em qualquer uma das listas
             List<String> allUniqueElements = new ArrayList<>();
-            for (String s : bopCounts.keySet()) {
-                if (!allUniqueElements.contains(s)) allUniqueElements.add(s);
+            for (String valueBop : bopCounts.keySet()) {
+                if (!allUniqueElements.contains(valueBop)) allUniqueElements.add(valueBop);
             }
-            for (String s : multiCounts.keySet()) {
-                if (!allUniqueElements.contains(s)) allUniqueElements.add(s);
+            for (String valueMulti : multiCounts.keySet()) {
+                if (!allUniqueElements.contains(valueMulti)) allUniqueElements.add(valueMulti);
             }
-            for (String s : analyzerCounts.keySet()) {
-                if (!allUniqueElements.contains(s)) allUniqueElements.add(s);
+            for (String valueAnalyzer : analyzerCounts.keySet()) {
+                if (!allUniqueElements.contains(valueAnalyzer)) allUniqueElements.add(valueAnalyzer);
             }
 
             boolean changedThisIteration = false; // Para verificar se alguma adição ocorreu
@@ -192,24 +192,6 @@ public class Validation {
         }
     }
 
-    public void result() {
-        System.out.println("--- Resultados da Validação ---");
-        System.out.println("Tamanho inicial da BOP: " + initialSizeBOP);
-        System.out.println("Tamanho inicial da Multi: " + initialSizeMulti);
-        System.out.println("Tamanho inicial da Analyzer: " + initialSizeAnalyzer);
-        System.out.println("Tamanho final da BOP: " + readSpreadSheet.getBopColumnValues().size());
-        System.out.println("Tamanho final da Multi: " + readSpreadSheet.getMultiColumnValues().size());
-        System.out.println("Tamanho final da Analyzer: " + readSpreadSheet.getAnalyzerColumnValues().size());
-        System.out.println("Total de elementos adicionados ao Analyzer: " + addedAnalyzer.size());
-        System.out.println("Total de elementos adicionados ao Multi: " + addedMulti.size());
-        System.out.println("Total de elementos adicionados ao BOP: " + addedBOP.size());
-        
-        System.out.println("Multi Added (detalhes):");
-        for(String element : addedMulti){
-            System.out.println(element);
-        }
-    }
-
     public void clearColumns() {
         readSpreadSheet.getBopColumnValues().clear();
         readSpreadSheet.getAnalyzerColumnValues().clear();
@@ -230,4 +212,41 @@ public class Validation {
     public List<String> getAddedBOP() {
         return new ArrayList<>(addedBOP);
     }
+
+    public int getInitialSizeBOP() {
+        return initialSizeBOP;
+    }
+
+    public int getInitialSizeMulti() {
+        return initialSizeMulti;
+    }
+
+    public int getInitialSizeAnalyzer() {
+        return initialSizeAnalyzer;
+    }
+    
+    public int getFinalSizeBOP() {
+        return readSpreadSheet.getBopColumnValues().size();
+    }
+    
+    public int getFinalSizeMulti() {
+        return readSpreadSheet.getMultiColumnValues().size();
+    }
+    
+    public int getFinalSizeAnalyzer() {
+        return readSpreadSheet.getAnalyzerColumnValues().size();
+    }
+    
+    public int getAddedSizeBOP() {
+        return addedBOP.size();
+    }
+    
+    public int getAddedSizeMulti() {
+        return addedMulti.size();
+    }
+    
+    public int getAddedSizeAnalyzer() {
+        return addedAnalyzer.size();
+    }
+    
 }
