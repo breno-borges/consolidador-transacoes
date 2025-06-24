@@ -6,7 +6,11 @@
 package forms;
 
 import data.Validation;
-
+import data.WriteSpreadSheet;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,30 +19,32 @@ import data.Validation;
 public class Result extends javax.swing.JDialog {
 
     private static Validation validation;
-    
+    private static String path;
+
     /**
      * Creates new form Result
      */
-    public Result(java.awt.Frame parent, boolean modal, Validation validation) {
+    public Result(java.awt.Frame parent, boolean modal, Validation validation, String path) {
         super(parent, modal);
         initComponents();
         this.validation = validation;
+        this.path = path;
         result();
-        
+
     }
-    
-    public void result(){
-        labelAnalyzerInitialSizeValue.setText(""+validation.getInitialSizeAnalyzer());
-        labelMultiInitialSizeValue.setText(""+validation.getInitialSizeMulti());
-        labelBopInitialSizeValue.setText(""+validation.getInitialSizeBOP());
-        labelAnalyzerAddSizeValue.setText(""+validation.getAddedSizeAnalyzer());
-        labelMultiAddSizeValue.setText(""+validation.getAddedSizeMulti());
-        labelBopAddSizeValue.setText(""+validation.getAddedSizeBOP());
-        labelAnalyzerFinalSizeValue.setText(""+validation.getFinalSizeAnalyzer());
-        labelMultiFinalSizeValue.setText(""+validation.getFinalSizeMulti());
-        labelBopFinalSizeValue.setText(""+validation.getFinalSizeBOP());
+
+    public void result() {
+        labelAnalyzerInitialSizeValue.setText("" + validation.getInitialSizeAnalyzer());
+        labelMultiInitialSizeValue.setText("" + validation.getInitialSizeMulti());
+        labelBopInitialSizeValue.setText("" + validation.getInitialSizeBOP());
+        labelAnalyzerAddSizeValue.setText("" + validation.getAddedSizeAnalyzer());
+        labelMultiAddSizeValue.setText("" + validation.getAddedSizeMulti());
+        labelBopAddSizeValue.setText("" + validation.getAddedSizeBOP());
+        labelAnalyzerFinalSizeValue.setText("" + validation.getFinalSizeAnalyzer());
+        labelMultiFinalSizeValue.setText("" + validation.getFinalSizeMulti());
+        labelBopFinalSizeValue.setText("" + validation.getFinalSizeBOP());
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -94,6 +100,11 @@ public class Result extends javax.swing.JDialog {
         labelAnalyzerAddSize.setText("Analyzer:");
 
         buttonPreview.setText("Visualizar Registros Adicionados");
+        buttonPreview.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonPreviewActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -194,6 +205,19 @@ public class Result extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void buttonPreviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPreviewActionPerformed
+        WriteSpreadSheet write = new WriteSpreadSheet();
+        try {
+            write.writeXlsOrXlsx(path, validation.getAddedBOP(), validation.getAddedMulti(), validation.getAddedAnalyzer());
+        } catch (IOException ex) {
+            Logger.getLogger(Result.class.getName()).log(Level.SEVERE, "Erro ao gerar o Excel", ex);
+            JOptionPane.showMessageDialog(this, "Erro ao criar o arquivo Excel: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+        } catch (IllegalArgumentException ex) { // Captura o novo erro de formato de arquivo
+            Logger.getLogger(Result.class.getName()).log(Level.SEVERE, "Erro de formato de arquivo", ex);
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "Erro de Formato", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_buttonPreviewActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -224,7 +248,7 @@ public class Result extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Result dialog = new Result(new javax.swing.JFrame(), true, validation);
+                Result dialog = new Result(new javax.swing.JFrame(), true, validation, path);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
